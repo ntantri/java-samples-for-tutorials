@@ -1,4 +1,4 @@
-package org.java.sample.streams;
+package org.java.sample.tutorials;
 
 /**
  * Hello world!
