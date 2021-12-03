@@ -1,4 +1,4 @@
-package org.java.sample.tutorials.designpatterns.creations.builder;
+package org.java.sample.tutorials.designpatterns.builder;
 
 import java.util.Map;
 
@@ -10,7 +10,7 @@ import java.util.Map;
  * based on the inputs provided to us. We need to generate a final object which would
  * hold the expected result of filters.
  */
-public class SelectFiltersComplexClassExample {
+public class SelectFiltersComplexNonBuilderExample {
   private static final int DEFAULT_LIMIT = 100;
 
   private String advertiserID;
@@ -21,10 +21,10 @@ public class SelectFiltersComplexClassExample {
   private boolean excludeInActiveData;
   private Map<String, Integer> filterCriteria;
 
-  public SelectFiltersComplexClassExample() {
+  public SelectFiltersComplexNonBuilderExample() {
   }
 
-  public SelectFiltersComplexClassExample(String advertiserID, String campaignID, int limitFor,
+  public SelectFiltersComplexNonBuilderExample(String advertiserID, String campaignID, int limitFor,
       String startDate, String endDate, boolean excludeInActiveData,
       Map<String, Integer> filterCriteria) {
     this.advertiserID = advertiserID;
@@ -36,12 +36,12 @@ public class SelectFiltersComplexClassExample {
     this.filterCriteria = filterCriteria;
   }
 
-  public SelectFiltersComplexClassExample(String advertiserID, String campaignID, int limitFor,
+  public SelectFiltersComplexNonBuilderExample(String advertiserID, String campaignID, int limitFor,
       String startDate, String endDate) {
     this(advertiserID, campaignID, limitFor, startDate, endDate, false, null);
   }
 
-  public SelectFiltersComplexClassExample(String advertiserID, String campaignID, String startDate,
+  public SelectFiltersComplexNonBuilderExample(String advertiserID, String campaignID, String startDate,
       String endDate) {
     this(advertiserID, campaignID, DEFAULT_LIMIT, startDate, endDate, false, null);
   }
