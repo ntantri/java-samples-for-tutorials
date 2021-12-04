@@ -1,5 +1,7 @@
 package org.java.sample.tutorials.designpatterns.builder;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 /**
@@ -41,9 +43,15 @@ public class SelectFiltersComplexNonBuilderExample {
     this(advertiserID, campaignID, limitFor, startDate, endDate, false, null);
   }
 
-  public SelectFiltersComplexNonBuilderExample(String advertiserID, String campaignID, String startDate,
-      String endDate) {
+  public SelectFiltersComplexNonBuilderExample(String advertiserID, String campaignID,
+      String startDate, String endDate) {
     this(advertiserID, campaignID, DEFAULT_LIMIT, startDate, endDate, false, null);
+  }
+
+  public SelectFiltersComplexNonBuilderExample(String advertiserID, String campaignID) {
+    this(advertiserID, campaignID, DEFAULT_LIMIT,
+        LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE),
+        LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE), false, null);
   }
 
   public String getAdvertiserID() {
