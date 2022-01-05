@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+import org.java.sample.tutorials.designpatterns.strategy.validators.InputValidators;
+
 public class ValidateCookieDataNonStrategy {
 
   public static void main(String[] args) {
@@ -16,8 +18,8 @@ public class ValidateCookieDataNonStrategy {
       System.exit(1);
     }
 
-    String dateStr = args[1];
-    String filename = args[2];
+    String dateStr = args[1];  // Date Validation Strategy
+    String filename = args[2]; // Filename Validation Strategy
 
     validateDateAndExitOnError(dateStr);
     validateFileName(filename);
@@ -49,7 +51,7 @@ public class ValidateCookieDataNonStrategy {
   }
 
   private static void validateFileName(String filename) {
-    if (filename.isEmpty() || filename.isEmpty()) {
+    if (filename.isBlank() || filename.isEmpty()) {
       System.out.println("Please provide a valid filename");
       System.exit(1);
     }
